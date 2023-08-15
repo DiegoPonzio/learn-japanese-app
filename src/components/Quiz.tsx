@@ -5,8 +5,8 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {NotificationManager} from "react-notifications";
 import {FaPlay} from "react-icons/fa";
 
-type FormData = {
-	nombre: string;
+type FormValues = {
+	nombre?: string;
 }
 
 export const Quiz = () => {
@@ -16,9 +16,10 @@ export const Quiz = () => {
 
 	const { handleSubmit, formState: { errors }, register } = useForm();
 
-	const checkAnswer: SubmitHandler<FormData>  = (data) => {
+	const checkAnswer: SubmitHandler<FormValues>  = (data) => {
 		const {nombre} = data;
-		if (romanjiToHiragana(nombre.toLowerCase(), text)) {
+		const romanji = nombre ? nombre.toLowerCase() : "";
+		if (romanjiToHiragana(romanji, text)) {
 			NotificationManager.success("Wiii!!", "Respuesta correcta");
 			setScore(score + 1);
 			setText(getRandomWord());
