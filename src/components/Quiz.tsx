@@ -14,7 +14,7 @@ export const Quiz = () => {
 	const [lives, setLives] = useState(3);
 	const [score, setScore] = useState(0);
 
-	const { handleSubmit, formState: { errors }, register } = useForm();
+	const { handleSubmit, formState: { errors }, register, reset } = useForm();
 
 	const checkAnswer: SubmitHandler<FormValues>  = (data) => {
 		const {nombre} = data;
@@ -27,6 +27,8 @@ export const Quiz = () => {
 			NotificationManager.error("Oh no!!", "Respuesta incorrecta");
 			setLives(lives - 1);
 		}
+
+		reset()
 	}
 
 	const resetGame = () => {
@@ -38,7 +40,7 @@ export const Quiz = () => {
 	return (
 		<div className="w-full max-w-xs md:max-w-4xl">
 			{ lives === 0 ? (
-				<div className="bg-gray-300 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+				<div className="bg-neutral-200 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 					<div className={"flex items-center justify-end"}>
 						<div className={"flex items-center"}>
 							<AiFillTrophy color={"#FFD54F"} size={30} />
@@ -58,7 +60,7 @@ export const Quiz = () => {
 					</div>
 				</div>
 			) : (
-				<form className="bg-gray-300 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(checkAnswer)}>
+				<form className="bg-neutral-200 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(checkAnswer)}>
 					<div className={"flex items-center justify-between"}>
 						<div className={"flex items-center"}>
 							{new Array(lives).fill(0).map((_, i) => (

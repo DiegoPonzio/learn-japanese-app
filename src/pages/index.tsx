@@ -24,10 +24,10 @@ const cardsInfo = [
 export default function Home() {
   return (
       <Layout title={"Home"}>
-          <div className={"flex flex-col justify-center items-center h-screen mt-32 max-md:mb-38 md:mt-0"}>
-              <div className={"flex flex-col justify-center items-center w-6/12 text-center"}>
+          <div className={"flex flex-col justify-center items-center md:h-screen mt-12 max-md:mb-32 md:mt-0"}>
+              <div className={"flex flex-col justify-center items-center md:w-6/12 text-center w-full"}>
                   <Image src={"/LearnJapanese.png"} alt={"Logo"} width={"300"} height={"300"} className={"object-contain"} />
-                  <h1 className={"text-6xl font-bold text-yellow"}>¿Aceptas el desafío?</h1>
+                  <h1 className={"text-6xl font-bold text-red-700"}>¿Aceptas el desafío?</h1>
                   <p className={"text-3xl pt-2"}>
                       ¿Listo para sumergirte en una experiencia de aprendizaje única? ¡Únete ahora y domina el japonés de una vez por todas!
                   </p>
@@ -41,7 +41,7 @@ export default function Home() {
                   </Link>
               </div>
           </div>
-          <div className={"flex max-lg:flex-col flex-row justify-center items-center mx-5 mb-10 gap-3 mt-12"}>
+          <div className={"flex max-lg:flex-col flex-row justify-center items-center md:mx-5 mb-10 gap-3 md:mt-12"}>
               {cardsInfo.map((card, index) => (
                   <ImageCards key={index} title={card.title} description={card.description} image={card.image} link={card.link} />
               ))}

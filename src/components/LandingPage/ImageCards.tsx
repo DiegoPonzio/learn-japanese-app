@@ -12,10 +12,10 @@ interface  MyProps {
 export const ImageCards: FC<MyProps> = ({ title, image, description, link }) => {
 	return (
 		<div className={"flex flex-col"}>
-			<Image src={image} alt={"abeja"} width={"200"} height={"200"} className={"w-10/12 object-cover object-center rounded-lg shadow-md dark:bg-amber-50 self-center"} priority />
+			<Image src={image} alt={"abeja"} width={"200"} height={"200"} className={"w-10/12 object-cover object-center rounded-lg shadow-md self-center max-md:max-w-xs"} priority />
 			<div className={"relative px-4 -mt-6"}>
-				<div className={"bg-white p-6 rounded-lg shadow-lg dark:bg-neutral-700"}>
-					<h4 className={"mt-1 text-xl font-semibold uppercase leading-tight truncate text-yellow"}>{title}</h4>
+				<div className={"bg-white md:p-6 p-2 rounded-lg shadow-lg dark:bg-neutral-700 max-md:max-w-xs"}>
+					<h4 className={"mt-1 text-xl font-semibold uppercase leading-tight truncate text-red-700"}>{title}</h4>
 					<div className={"mt-1"}>
 						<p>
 							{description}
