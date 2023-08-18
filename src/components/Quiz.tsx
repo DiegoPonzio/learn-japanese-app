@@ -37,9 +37,8 @@ export const Quiz = () => {
 
 	return (
 		<div className="w-full max-w-xs md:max-w-4xl">
-			{ lives === 0 && (NotificationManager.error("Oh no!!", "Haz perdido")) }
 			{ lives === 0 ? (
-				<div className="bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+				<div className="bg-gray-300 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
 					<div className={"flex items-center justify-end"}>
 						<div className={"flex items-center"}>
 							<AiFillTrophy color={"#FFD54F"} size={30} />
@@ -52,14 +51,14 @@ export const Quiz = () => {
 						</div>
 					</div>
 					<div className="flex items-center justify-center">
-						<button className="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={resetGame} >
+						<button className="flex bg-red-700 hover:bg-red-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={resetGame} >
 							<FaPlay className={"mr-2 self-center"} />
 							Jugar
 						</button>
 					</div>
 				</div>
 			) : (
-				<form className="bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(checkAnswer)}>
+				<form className="bg-gray-300 dark:bg-neutral-600 shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(checkAnswer)}>
 					<div className={"flex items-center justify-between"}>
 						<div className={"flex items-center"}>
 							{new Array(lives).fill(0).map((_, i) => (
@@ -83,15 +82,15 @@ export const Quiz = () => {
 					</div>
 					<div className="mb-6">
 						<div className="relative z-0 w-full mb-6 group">
-							<input type="text" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required {...register("nombre", { required: true, maxLength: 50, pattern: /^[a-zA-Z\u00C0-\u017f\s]+$/ })} />
-							<label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+							<input type="text" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-red-300 dark:text-white dark:border-red-400 dark:focus:border-red-700 focus:outline-none focus:ring-0 focus:border-red-700 peer" placeholder=" " required {...register("nombre", { required: true, maxLength: 50, pattern: /^[a-zA-Z\u00C0-\u017f\s]+$/ })} />
+							<label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-500 peer-focus:dark:text-red-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 								Romanji
 							</label>
 							{errors.nombre && <p className="text-red-500 text-xs italic">Palabra no válida</p>}
 						</div>
 					</div>
 					<div className="flex items-center justify-between">
-						<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+						<button className="bg-red-700 hover:bg-red-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 							Checar
 						</button>
 					</div>
