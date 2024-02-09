@@ -56,7 +56,15 @@ const listOfWords: string[] = [
     'はし',
     'はな',
     'たかい',
-    'しま'
+    'しま',
+    'にぎやか',
+    'にすんです',
+    'わたし',
+    'おっと',
+    'にっき',
+    'きって',
+    'けっこん',
+    'まっすぐ'
 ]
 
 const listOfWords2 : HiraganaExample[] = [
